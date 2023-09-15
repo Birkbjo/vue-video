@@ -4,13 +4,11 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-
   font-weight: normal;
   place-items: center;
 }
 
-a,
-.green {
+a {
   text-decoration: none;
   color: inherit;
   transition: 0.4s;
