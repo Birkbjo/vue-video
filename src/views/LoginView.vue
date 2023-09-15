@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import GitHubLogoVue from '../components/icons/GitHubLogo.vue'
 import LoginButton from '../components/LoginButton.vue'
+import GitHubLink from '../components/GitHubLink.vue';
+
+const ghLink = __HOMEPAGE__
 </script>
 
 <template>
@@ -9,13 +12,10 @@ import LoginButton from '../components/LoginButton.vue'
       <h1>Velkommen!</h1>
       <LoginButton />
     </div>
-   
   </main>
   <div class="footer">
-      <a href="{{  __HOMEPAGE__ }}">
-        <GitHubLogoVue />
-      </a>
-    </div>
+    <GitHubLink />
+  </div>
 </template>
 
 <style scoped>

@@ -2,7 +2,7 @@
   "name": "vue-login",
   "version": "0.0.0",
   "author": "Birk Johansson",
-  "homepage": "hello",
+  "homepage": "https://github.com/Birkbjo/vue-video",
   "private": true,
   "scripts": {
     "dev": "vite",

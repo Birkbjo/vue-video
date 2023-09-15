@@ -4,6 +4,7 @@ import LogoutButton from '../components/LogoutButton.vue'
 import UploadVideo from '../components/UploadVideo.vue'
 import { useAuth0 } from '@auth0/auth0-vue'
 import { unref } from 'vue'
+import GitHubLink from '@/components/GitHubLink.vue'
 
 const name = unref(useAuth0().user)?.name
 </script>
@@ -11,9 +12,7 @@ const name = unref(useAuth0().user)?.name
 <template>
   <main>
     <nav>
-      <a class="gh-logo" href="{{  __HOMEPAGE__ }}">
-        <GitHubLogoVue />
-      </a>
+      <GitHubLink class="gh-logo" />
       <LogoutButton />
     </nav>
     <div class="welcome-wrapper">

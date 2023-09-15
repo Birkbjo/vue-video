@@ -59,7 +59,7 @@ const videoSrc = computed(() => {
   margin: 14px;
 }
 .uploadButton {
-  margin: 12px 0px;
+  margin: 16px 0px;
 }
 
 .deleteVideoButton {
