@@ -17,7 +17,8 @@ a,
 }
 
 @media (hover: hover) {
-  a:hover, :focus {
+  a:hover,
+  :focus {
     color: white;
   }
 }

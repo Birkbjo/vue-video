@@ -5,10 +5,9 @@ const ghLink = __HOMEPAGE__
 </script>
 
 <template>
-    <a :href="ghLink" target="_blank">
-      <GitHubLogoVue />
-    </a>
+  <a :href="ghLink" target="_blank">
+    <GitHubLogoVue />
+  </a>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

@@ -35,7 +35,8 @@ defineEmits(['click'])
   transition: 0.4s;
 }
 
-.simple-button:hover, :focus {
+.simple-button:hover,
+:focus {
   background-color: rgb(255, 99, 67);
 }
 
