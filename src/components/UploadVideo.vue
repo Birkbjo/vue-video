@@ -7,18 +7,24 @@ type VideoEvent = Event & {
   target: HTMLVideoElement
 }
 
+const fileInputRef = ref<HTMLInputElement | null>(null)
+const selectedFile = ref<File | null>(null)
+
 const triggerFileInput = () => {
   fileInputRef.value?.click()
 }
-
-const fileInputRef = ref<HTMLInputElement | null>(null)
-const selectedFile = ref<File | null>(null)
 
 const handleFileChange = (event: Event) => {
   const input = event.target as HTMLInputElement
   if (input.files && input.files.length > 0) {
     selectedFile.value = input.files[0]
   }
+}
+
+const handleLoadedVideo = (event: Event) => {
+  ;(event as VideoEvent).target.scrollIntoView({
+    behavior: 'smooth'
+  })
 }
 
 const videoSrc = computed(() => {
@@ -53,7 +59,7 @@ const videoSrc = computed(() => {
         type="video/mp4"
         controls
         autoplay
-        @loadeddata="(event: Event) => (event as VideoEvent).target.scrollIntoView()"
+        @loadeddata="handleLoadedVideo"
       ></video>
     </template>
     <div class="video-wrapper"></div>
