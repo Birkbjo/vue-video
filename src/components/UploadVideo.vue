@@ -3,6 +3,10 @@ import SimpleButton from './SimpleButton.vue'
 import IconUpload from './icons/IconUpload.vue'
 import { computed, ref } from 'vue'
 
+type VideoEvent = Event & {
+  target: HTMLVideoElement
+}
+
 const triggerFileInput = () => {
   fileInputRef.value?.click()
 }
@@ -44,10 +48,15 @@ const videoSrc = computed(() => {
         Fil: {{ selectedFile.name }}
         <SimpleButton label="X" @click="selectedFile = null" small class="deleteVideoButton" />
       </div>
-      <div class="video-wrapper">
-        <video :src="videoSrc" type="video/mp4" controls autoplay></video>
-      </div>
+      <video
+        :src="videoSrc"
+        type="video/mp4"
+        controls
+        autoplay
+        @loadeddata="(event: Event) => (event as VideoEvent).target.scrollIntoView()"
+      ></video>
     </template>
+    <div class="video-wrapper"></div>
   </div>
 </template>
 
