@@ -25,9 +25,12 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
-```sh
-npm install
-```
+1. Setup Auth0 and find domain and clientId under Applications
+1. Rename .env.template to .env
+1. Add Auth0 domain and clientId to .env
+1. `npm install`
+
+
 
 ### Compile and Hot-Reload for Development
 
