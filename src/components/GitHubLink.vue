@@ -9,5 +9,3 @@ const ghLink = __HOMEPAGE__
     <GitHubLogoVue />
   </a>
 </template>
-
-<style scoped></style>

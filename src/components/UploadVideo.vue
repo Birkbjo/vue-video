@@ -62,7 +62,7 @@ const videoSrc = computed(() => {
         @loadeddata="handleLoadedVideo"
       ></video>
     </template>
-    <div class="video-wrapper"></div>
+  
   </div>
 </template>
 
@@ -79,9 +79,5 @@ const videoSrc = computed(() => {
 
 .deleteVideoButton {
   background-color: rgba(0, 0, 0, 0);
-}
-.videoWrapper {
-  max-width: 500px;
-  max-height: 200px;
 }
 </style>

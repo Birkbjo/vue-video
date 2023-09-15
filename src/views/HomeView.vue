@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import GitHubLogoVue from '../components/icons/GitHubLogo.vue'
 import LogoutButton from '../components/LogoutButton.vue'
 import UploadVideo from '../components/UploadVideo.vue'
 import { useAuth0 } from '@auth0/auth0-vue'
