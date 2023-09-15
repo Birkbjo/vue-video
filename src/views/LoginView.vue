@@ -1,0 +1,38 @@
+<script setup lang="ts">
+import GitHubLogoVue from '../components/icons/GitHubLogo.vue'
+import LoginButton from '../components/LoginButton.vue'
+</script>
+
+<template>
+  <main>
+    <div class="wrapper">
+      <h1>Velkommen!</h1>
+      <LoginButton />
+    </div>
+   
+  </main>
+  <div class="footer">
+      <a href="{{  __HOMEPAGE__ }}">
+        <GitHubLogoVue />
+      </a>
+    </div>
+</template>
+
+<style scoped>
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  place-items: center;
+  margin: 14px;
+  gap: 2em;
+  margin-top: 5em;
+}
+
+.footer {
+  display: flex;
+  place-content: center;
+  margin: 200px auto;
+  cursor: pointer;
+}
+</style>

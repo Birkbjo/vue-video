@@ -1,0 +1,23 @@
+@import './base.css';
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  font-weight: normal;
+  place-items: center;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+  a:hover, :focus {
+    color: white;
+  }
+}

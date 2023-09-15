@@ -1,0 +1,72 @@
+<script setup lang="ts">
+import SimpleButton from './SimpleButton.vue'
+import IconUpload from './icons/IconUpload.vue'
+import { computed, ref } from 'vue'
+
+const triggerFileInput = () => {
+  fileInputRef.value?.click()
+}
+
+const fileInputRef = ref<HTMLInputElement | null>(null)
+const selectedFile = ref<File | null>(null)
+
+const handleFileChange = (event: Event) => {
+  const input = event.target as HTMLInputElement
+  if (input.files && input.files.length > 0) {
+    selectedFile.value = input.files[0]
+  }
+}
+
+const videoSrc = computed(() => {
+  return selectedFile.value ? URL.createObjectURL(selectedFile.value) : null
+})
+</script>
+
+<template>
+  <div class="uploadWrapper">
+    <p>Trykk på knappen nedenfor for å laste opp en {{ selectedFile && 'ny' }} video</p>
+    <input
+      type="file"
+      ref="fileInputRef"
+      @change="handleFileChange"
+      style="display: none"
+      accept="video/*"
+    />
+    <SimpleButton
+      class="uploadButton"
+      :label="`Last opp ${selectedFile ? 'ny' : ''} video`"
+      @click="triggerFileInput"
+    >
+      <template #icon><IconUpload /></template>
+    </SimpleButton>
+    <template v-if="selectedFile && videoSrc">
+      <div>
+        Fil: {{ selectedFile.name }}
+        <SimpleButton label="X" @click="selectedFile = null" small class="deleteVideoButton" />
+      </div>
+      <div class="video-wrapper">
+        <video :src="videoSrc" type="video/mp4" controls autoplay></video>
+      </div>
+    </template>
+  </div>
+</template>
+
+<style scoped>
+.uploadWrapper {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  margin: 14px;
+}
+.uploadButton {
+  margin: 12px 0px;
+}
+
+.deleteVideoButton {
+  background-color: rgba(0, 0, 0, 0);
+}
+.videoWrapper {
+  max-width: 500px;
+  max-height: 200px;
+}
+</style>
