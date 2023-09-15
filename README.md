@@ -1,5 +1,7 @@
-# vue-login
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9bdb1b27-c706-47f3-ac96-ae83d880e216/deploy-status)](https://app.netlify.com/sites/vue-video/deploys) 
 
+### [Live Demo](https://vue-video.netlify.app/login)
+# vue-login
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
